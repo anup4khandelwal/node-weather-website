@@ -8,7 +8,7 @@ const forecast = (lat, long, callback) => {
         } else if(body.error) {
             callback("Location data not found", undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0]+". It is currently "+body.current.temperature+" degree out, it feel like "+body.current.feelslike+" degrees out")
+            callback(undefined, "<img src='"+body.current.weather_icons[0]+"' /><br/>"+ "<strong>Forecast:</strong> "+body.current.weather_descriptions[0]+". It is currently "+body.current.temperature+"&#8451; out, it feel like "+body.current.feelslike+"&#8451; out. "+"The Humidity is "+body.current.humidity+"%.")
         }
     })
 }
